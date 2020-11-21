@@ -18,6 +18,10 @@ function create_html() {
     do
         # for each photo create an image tag
         echo -n "<img src=\"data:image/png;base64," >> index.html
+
+        # scale image
+        convert $p -resize 64x64^ $p
+
 	# add base64 data to the image tag
         echo $p
         #TODO: resize to thumbnail
